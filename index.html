@@ -22,7 +22,7 @@
     "name": "Vedanta Dental Clinic",
     "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
     "telephone": "+91 9467241150",
-    "email": "",
+    "email": "vedantadentalclinicggn@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "532/1, New Railway Rd, Near Bheem Nagar, Opposite Himgiri Hero Showroom, Sanjay Colony, Sector 6",
@@ -98,7 +98,7 @@
           <div class="flex flex-wrap gap-3 mt-2 mb-4">
             <a href="tel:+919467241150" class="btn-primary">Call Now</a>
             <a href="#booking" class="btn-secondary">Book Appointment</a>
-            <a href="https://wa.link" target="_blank" rel="noopener" class="btn-green">WhatsApp Consultation</a>
+            <a href="https://wa.link/n3c60v" target="_blank" rel="noopener" class="btn-green">WhatsApp Consultation</a>
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
@@ -247,9 +247,9 @@
     <section class="container mx-auto px-4 py-8" id="booking">
       <h2 class="font-poppins font-bold text-xl text-blue-800 mb-4">Book Your Appointment</h2>
       <form id="appointment-form" class="rounded-2xl shadow-md bg-white p-6 max-w-lg mx-auto flex flex-col gap-4">
-        <input type="text" required name="name" placeholder="Name" class="input-field">
-        <input type="tel" required name="phone" placeholder="Phone" class="input-field">
-        <select name="treatment" required class="input-field">
+        <input id="name"  type="text" required name="name" placeholder="Name" class="input-field">
+        <input id="phone"  type="tel" required name="phone" placeholder="Phone" class="input-field">
+        <select id="treatment" name="treatment" required class="input-field">
           <option value="">Select Treatment</option>
           <option>Dental Implants</option>
           <option>Root Canal Treatment</option>
@@ -260,16 +260,33 @@
           <option>Smile Makeover</option>
           <option>Cosmetic Dentistry</option>
         </select>
-        <input type="date" name="preferred_date" class="input-field">
+        <input id="date" type="date" name="preferred_date" class="input-field">
         <div class="flex gap-3 items-center">
-          <button type="submit" class="btn-primary flex-1">Book Appointment</button>
+          <button type="submit" class="btn-primary flex-1"  onclick="sendMail()">Book Appointment</button>
           <a href="tel:+919467241150" class="btn-secondary">Call Now</a>
-          <a href="https://wa.link" target="_blank" rel="noopener" class="btn-green">WhatsApp Booking</a>
+          <a href="https://wa.link/n3c60v" target="_blank" rel="noopener" class="btn-green">WhatsApp Booking</a>
         </div>
         <div id="form-msg" class="text-green-600 text-xs hidden"></div>
       </form>
     </section>
+<script>
+function sendMail(){
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let treatment = document.getElementById("treatment").value;
+let date = document.getElementById("date").value;
 
+let subject = "Appointment Request";
+let body =
+"Full Name: " + name + "%0D%0A" +
+"Phone Number: " + phone + "%0D%0A" +
+"treatment: " + treatment + "%0D%0A" +
+"date: " + date;
+
+window.location.href = "mailto:vedantadentalclinicggn@gmail.com?subject=" + subject + "&body=" + body;
+
+}
+</script>
     <section class="container mx-auto px-4 py-8" id="contact">
       <div class="bg-white rounded-2xl shadow p-6 max-w-md mx-auto text-center">
         <div class="font-poppins font-bold text-blue-800 text-lg mb-2">Vedanta Dental Clinic</div>
@@ -277,7 +294,7 @@
         <div class="text-gray-700 mb-1">Phone: <a href="tel:+919467241150" class="text-blue-600">+91 9467241150</a></div>
         <div class="text-gray-700 mb-1">Hours: <span>9 AM – 8 PM</span></div>
         <div class="flex justify-center space-x-3 mt-2">
-          <a href="https://wa.link" target="_blank" rel="noopener" class="text-green-500 text-2xl" aria-label="WhatsApp">💬</a>
+          <a href="https://wa.link/n3c60v" target="_blank" rel="noopener" class="text-green-500 text-2xl" aria-label="WhatsApp">💬</a>
           <a href="https://instagram.com" target="_blank" rel="noopener" class="text-pink-500 text-2xl" aria-label="Instagram">📸</a>
         </div>
       </div>
@@ -296,6 +313,6 @@
   </footer>
 
   <a href="tel:+919467241150" class="float-btn float-btn-call" aria-label="Call Now">📞</a>
-  <a href="https://wa.link" target="_blank" rel="noopener" class="float-btn float-btn-wa" aria-label="WhatsApp">💬</a>
+  <a href="https://wa.link/n3c60v" target="_blank" rel="noopener" class="float-btn float-btn-wa" aria-label="WhatsApp">💬</a>
 </body>
 </html>
