@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap');
+
+body, .font-inter {
+  font-family: 'Inter', Arial, sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.btn-primary {
+  @apply bg-blue-700 text-white font-semibold rounded-full px-5 py-2 shadow transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+.btn-secondary {
+  @apply bg-white border border-blue-700 text-blue-700 rounded-full px-5 py-2 shadow transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200;
+}
+.btn-green {
+  @apply bg-green-600 text-white rounded-full font-semibold px-5 py-2 shadow transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300;
+}
+.trust-card {
+  @apply flex items-center bg-white rounded-xl shadow px-4 py-3 font-semibold text-gray-600 text-sm;
+}
+.service-card {
+  @apply bg-white rounded-2xl shadow-md p-5 flex flex-col items-center;
+}
+.icon-container {
+  @apply rounded-full w-12 h-12 flex items-center justify-center mb-3 shadow;
+}
+.learn-link {
+  @apply text-blue-600 font-bold text-sm hover:underline mt-1;
+}
+.why-card {
+  @apply bg-white rounded-xl shadow px-4 py-3 font-semibold text-gray-700 text-sm;
+}
+.review-card {
+  @apply bg-white rounded-2xl shadow p-4 flex flex-col items-start;
+}
+.gallery-img {
+  @apply rounded-xl shadow-md w-full h-40 object-cover bg-gray-100;
+}
+.input-field {
+  @apply bg-blue-50 border border-blue-200 rounded-xl px-4 py-2 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+.float-btn {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 1000;
+  transition: all 0.15s;
+}
+
+.float-btn-call {
+  background: linear-gradient(135deg,#2b7aef 40%,#7acfe8 100%);
+  color: #fff;
+  bottom: 82px;
+  right: 20px;
+}
+.float-btn-wa {
+  background: linear-gradient(135deg,#25d366 40%,#128c7e 100%);
+  color: #fff;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Sticky header shadow */
+#header {
+  box-shadow: 0 2px 17px 0 rgba(20,135,230,0.07);
+}
+
+/* Prevent double tap zoom for buttons on mobile */
+button, .btn-primary, .btn-secondary, .btn-green, .float-btn {
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling [for anchor links] */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: 1rem;
+  }
+  .gallery-img {
+    height: 120px;
+  }
+  .float-btn {
+    right: 14px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Hide nav links on small screens */
+@media (max-width: 1023px) {
+  nav {
+    display: none !important;
+  }
+}
